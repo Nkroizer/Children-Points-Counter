@@ -1,0 +1,8 @@
+{
+  "name": "Children Points Counter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "3376060f"
+}
