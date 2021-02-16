@@ -12,6 +12,7 @@ export default {
   name: "ExploreContainer",
   props: {
     name: String,
+    points: Number,
   },
 };
 </script>
