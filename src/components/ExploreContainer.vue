@@ -1,18 +1,19 @@
 <template>
   <div id="container">
     <strong>{{ name }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div>{{ points }}</div>
+    <ion-button color="success">Add</ion-button>
+    <ion-button color="danger">Remove</ion-button>
   </div>
 </template>
 
 <script lang="ts">
-
 export default {
-  name: 'ExploreContainer',
+  name: "ExploreContainer",
   props: {
-    name: String
-  }
-}
+    name: String,
+  },
+};
 </script>
 
 <style scoped>

@@ -2,8 +2,8 @@ import { mount } from '@vue/test-utils'
 import eliPoints from '@/views/eliPoints.vue'
 
 describe('eliPoints.vue', () => {
-  it('renders tab 1 view', () => {
+  it('renders Eli Points view', () => {
     const wrapper = mount(eliPoints)
-    expect(wrapper.text()).toMatch('Tab 1 page')
+    expect(wrapper.text()).toMatch('Eli Points page')
   })
 })
