@@ -1,19 +1,31 @@
 <template>
   <div id="container">
     <strong>{{ name }}</strong>
-    <div>{{ points }}</div>
-    <ion-button color="success">Add</ion-button>
-    <ion-button color="danger">Remove</ion-button>
+    <div>{{ counter }}</div>
+    <ion-button color="success" v-on:click="incrementCounter">+</ion-button>
+    <ion-button color="danger" v-on:click="decrementCounter">-</ion-button>
   </div>
 </template>
 
 <script lang="ts">
+var counter = 0;
+
 export default {
   name: "ExploreContainer",
   props: {
     name: String,
     points: Number,
   },
+  methods: {
+    incrementCounter: function() {
+      counter += 1; 
+    },
+
+    decrementCounter: function() {
+      counter -= 1;
+    }
+  },
+
 };
 </script>
 
