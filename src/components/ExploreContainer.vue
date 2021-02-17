@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-var counter = 0;
+let counter = 0;
 
 export default {
   name: "ExploreContainer",
