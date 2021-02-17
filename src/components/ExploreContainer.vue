@@ -8,7 +8,6 @@
 </template>
 
 <script lang="ts">
-let counter = 0;
 
 export default {
   name: "ExploreContainer",
@@ -16,13 +15,18 @@ export default {
     name: String,
     points: Number,
   },
+  data() {
+    return {
+      counter: this.points || 0,
+    }
+  },
   methods: {
     incrementCounter: function() {
-      counter += 1; 
+      this.counter += 1; 
     },
 
     decrementCounter: function() {
-      counter -= 1;
+      this.counter -= 1;
     }
   },
 
