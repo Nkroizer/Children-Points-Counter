@@ -12,7 +12,7 @@
         </ion-toolbar>
       </ion-header>
     
-      <ExploreContainer name="Eli Points page" points="10"/>
+      <ExploreContainer name="Eli Points"/>
     </ion-content>
   </ion-page>
 </template>

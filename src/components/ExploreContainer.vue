@@ -1,9 +1,31 @@
 <template>
   <div id="container">
     <strong>{{ name }}</strong>
-    <div>{{ counter }}</div>
-    <ion-button color="success" v-on:click="incrementCounter">+</ion-button>
-    <ion-button color="danger" v-on:click="decrementCounter">-</ion-button>
+    <div class="county">{{ getCounter() }}</div>
+    <ion-button color="success" v-on:click="incrementCounter(1)">+</ion-button>
+    <ion-button color="danger" v-on:click="decrementCounter(1)">-</ion-button>
+    <div>
+      <ion-button color="success" v-on:click="incrementCounter(10)"
+        >10</ion-button
+      >
+      <ion-button color="success" v-on:click="incrementCounter(50)"
+        >50</ion-button
+      >
+      <ion-button color="success" v-on:click="incrementCounter(100)"
+        >100</ion-button
+      >
+    </div>
+    <div>
+      <ion-button color="danger" v-on:click="decrementCounter(10)"
+        >10</ion-button
+      >
+      <ion-button color="danger" v-on:click="decrementCounter(50)"
+        >50</ion-button
+      >
+      <ion-button color="danger" v-on:click="decrementCounter(100)"
+        >100</ion-button
+      >
+    </div>
   </div>
 </template>
 
@@ -13,22 +35,31 @@ export default {
   name: "ExploreContainer",
   props: {
     name: String,
-    points: Number,
   },
   data() {
     return {
-      counter: this.props.points || 0,
+      counter: localStorage["a"] ? localStorage["a"] : 0,
     };
   },
   methods: {
-    incrementCounter: function() {
-      counter += 1;
+    incrementCounter: function(value: number) {
+      counter += value;
+      const curCou = document.querySelector(".county");
+      curCou!.innerHTML = "<div>" + counter + "</div>";
+      localStorage["a"] = counter;
       console.log(counter);
     },
 
-    decrementCounter: function() {
-      counter -= 1;
+    decrementCounter: function(value: number) {
+      counter -= value;
+      const curCou = document.querySelector(".county");
+      curCou!.innerHTML = "<div>" + counter + "</div>";
+      localStorage["a"] = counter;
       console.log(counter);
+    },
+
+    getCounter: function() {
+      return counter;
     },
   },
 };
