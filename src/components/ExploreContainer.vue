@@ -8,6 +8,7 @@
 </template>
 
 <script lang="ts">
+let counter = 0;
 export default {
   name: "ExploreContainer",
   props: {
@@ -16,18 +17,18 @@ export default {
   },
   data() {
     return {
-      counter: Number = this.props.points || 0,
+      counter: this.props.points || 0,
     };
   },
   methods: {
     incrementCounter: function() {
-      this.counter += 1;
-      console.log(this.counter);
+      counter += 1;
+      console.log(counter);
     },
 
     decrementCounter: function() {
-      this.counter -= 1;
-      console.log(this.counter);
+      counter -= 1;
+      console.log(counter);
     },
   },
 };
